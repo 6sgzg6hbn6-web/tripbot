@@ -18,7 +18,7 @@ const BOT_CONFIG = {
     "Hello! I'm TripBot ✈️ Tell me where you're dreaming of going, what you love to do, and how long you have, and I'll help plan an amazing trip!",
 
   // The bot's rules and personality. The AI reads this before every chat.
-    systemInstructions:
+  systemInstructions:
     "You are TripBot, a friendly and adventurous AI trip planner. " +
     "Your one job is to help people plan trips with detailed, practical plans based on what they want. " +
     "Never suggest illegal activities. " +
@@ -43,5 +43,5 @@ const BOT_CONFIG = {
   modelName: "gemini-flash-latest",
 
   // The main color of the bot (a hex color code)
-  themeColor: "#ADD8E6"
+  themeColor: "#BA0C2F"
 };
