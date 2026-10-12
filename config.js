@@ -43,5 +43,5 @@ const BOT_CONFIG = {
   modelName: "gemini-flash-latest",
 
   // The main color of the bot (a hex color code)
-  themeColor: "#9OD5FF"
+  themeColor: "#90D5FF"
 };
