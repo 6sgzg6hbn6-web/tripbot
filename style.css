@@ -7,17 +7,21 @@
   --border: #e2e2e8;
   --bot-bubble: #ffffff;
   --user-text: #ffffff;
+  --error-bg: #fff1f1;
+  --error-text: #8a1c1c;
+  --error-border: #f0b8b8;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #121216;
-    --card: #1c1c22;
-    --text: #ececf1;
-    --muted: #9a9aa6;
-    --border: #2e2e38;
-    --bot-bubble: #25252d;
-  }
+:root[data-theme="dark"] {
+  --bg: #121216;
+  --card: #1c1c22;
+  --text: #ececf1;
+  --muted: #9a9aa6;
+  --border: #2e2e38;
+  --bot-bubble: #25252d;
+  --error-bg: #3a1d1d;
+  --error-text: #ffc9c9;
+  --error-border: #6b2c2c;
 }
 
 * { box-sizing: border-box; }
@@ -120,10 +124,11 @@ body {
 
 @media (prefers-color-scheme: dark) {
   .msg.error {
-    background: #3a1d1d;
-    color: #ffc9c9;
-    border-color: #6b2c2c;
-  }
+  align-self: flex-start;
+  background: var(--error-bg);
+  color: var(--error-text);
+  border: 1px solid var(--error-border);
+}
 }
 
 /* Thinking animation */
