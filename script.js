@@ -13,7 +13,6 @@ const sendBtn = $("sendBtn");
 const keyModal = $("keyModal");
 const keyInput = $("keyInput");
 const rememberBox = $("rememberBox");
-const themeBtn = $("themeBtn");
 
 let history = [];      // the conversation sent to Gemini
 let isLoading = false;
@@ -27,37 +26,6 @@ function setupBot() {
   document.documentElement.style.setProperty("--theme", BOT_CONFIG.themeColor);
   startNewChat();
 }
-
-// ---------- Light / dark mode ----------
-function applyTheme(mode) {
-  document.documentElement.setAttribute("data-theme", mode);
-  // Show the icon for the mode you would switch TO
-  themeBtn.textContent = mode === "dark" ? "☀️" : "🌙";
-}
-
-function setupTheme() {
-  let saved = null;
-  try {
-    saved = localStorage.getItem("theme");
-  } catch (e) {}
-
-  if (saved === "light" || saved === "dark") {
-    applyTheme(saved);
-  } else {
-    // First visit: follow the device's setting
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    applyTheme(prefersDark ? "dark" : "light");
-  }
-}
-
-themeBtn.addEventListener("click", () => {
-  const current = document.documentElement.getAttribute("data-theme");
-  const next = current === "dark" ? "light" : "dark";
-  applyTheme(next);
-  try {
-    localStorage.setItem("theme", next);
-  } catch (e) {}
-});
 
 // ---------- API key storage ----------
 function getKey() {
@@ -313,5 +281,4 @@ keyModal.addEventListener("click", (e) => {
 });
 
 // ---------- Go! ----------
-setupTheme();
 setupBot();
