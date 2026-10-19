@@ -73,6 +73,16 @@ body {
 }
 .btn:hover { background: rgba(255, 255, 255, 0.3); }
 
+/* Notes status line */
+.kb-status {
+  padding: 6px 16px;
+  font-size: 13px;
+  color: var(--muted);
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+}
+.kb-status[hidden] { display: none; }
+
 /* Messages */
 .messages {
   flex: 1;
@@ -125,6 +135,21 @@ body {
     border-color: #6b2c2c;
   }
 }
+
+/* Sources section under bot replies */
+.sources {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+}
+.sources summary {
+  cursor: pointer;
+  color: var(--muted);
+}
+.source-item { margin-top: 8px; }
+.source-title { font-weight: 600; }
+.source-snippet { color: var(--muted); }
 
 /* Thinking animation */
 .thinking { display: flex; gap: 5px; align-items: center; padding: 14px; }
