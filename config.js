@@ -43,5 +43,34 @@ const BOT_CONFIG = {
   modelName: "gemini-flash-latest",
 
   // The main color of the bot (a hex color code)
-  themeColor: "#ADD8E6"
+  themeColor: "#ADD8E6",
+
+  // ------------------------------------------------------------
+  //  KNOWLEDGE SETTINGS (so the bot can answer from your own notes)
+  // ------------------------------------------------------------
+
+  // true = the bot looks things up in your notes file. false = turns it off.
+  useKnowledge: true,
+
+  // The name of your notes file. It must sit next to index.html.
+  knowledgeFile: "knowledge.md",
+
+  // How the bot finds notes:
+  //   "meaning"  = finds notes that mean the same thing as the question (smarter)
+  //   "keywords" = finds notes that share words with the question (simpler)
+  // If "meaning" ever fails, the bot switches to "keywords" by itself.
+  searchMethod: "meaning",
+
+  // How many notes to hand the AI for each question (3 is a good start).
+  topK: 3,
+
+  // The model that turns text into numbers for "meaning" search.
+  embeddingModel: "gemini-embedding-2",
+
+  // Extra rules added to the bot's instructions when notes are used.
+  knowledgeRules:
+    "You will receive NOTES from my knowledge file along with each question. " +
+    "If the notes answer the question, base your answer on them and cite the note numbers like [1]. " +
+    "If they don't, begin with 'I couldn't find that in my notes.' " +
+    "Never invent facts, dates, rules or policies that are not in the notes."
 };
