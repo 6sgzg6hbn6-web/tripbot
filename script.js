@@ -14,6 +14,7 @@ const keyModal = $("keyModal");
 const keyInput = $("keyInput");
 const rememberBox = $("rememberBox");
 const statusEl = $("kbStatus");
+const checkModal = $("checkModal");
 
 let history = [];      // the conversation sent to Gemini (plain questions only)
 let isLoading = false;
@@ -24,6 +25,7 @@ function setupBot() {
   $("botName").textContent = BOT_CONFIG.name;
   $("botEmoji").textContent = BOT_CONFIG.emoji;
   $("botTagline").textContent = BOT_CONFIG.tagline;
+  $("footerNote").textContent = BOT_CONFIG.footerNote || "";
   document.documentElement.style.setProperty("--theme", BOT_CONFIG.themeColor);
   startNewChat();
 }
@@ -433,6 +435,30 @@ function formatText(text) {
   return html;
 }
 
+// ---------- Answer badge ----------
+// "cited"    = the answer cites a note like [1]
+// "notfound" = the answer starts with "I couldn't find that in my notes"
+// "none"     = anything else (a clarifying question, a refusal, etc.)
+function replyKind(reply) {
+  const plain = reply
+    .replace(/[\u2018\u2019]/g, "'")
+    .replace(/^[\s*_>#-]+/, "")
+    .toLowerCase();
+  if (plain.startsWith("i couldn't find that in my notes")) return "notfound";
+  if (/\[\d+\]/.test(reply)) return "cited";
+  return "none";
+}
+
+function buildBadge(kind) {
+  const badge = document.createElement("div");
+  badge.className = "badge " + (kind === "cited" ? "badge-ok" : "badge-warn");
+  badge.textContent =
+    kind === "cited"
+      ? "📚 Answered from my notes"
+      : "⚠️ Not in my notes. Please check an official source";
+  return badge;
+}
+
 // ---------- Chat display ----------
 function scrollToBottom() {
   messagesEl.scrollTop = messagesEl.scrollHeight;
@@ -468,13 +494,16 @@ function buildSources(found) {
   return details;
 }
 
-function addMessage(role, text, sources) {
+function addMessage(role, text, sources, kind) {
   const div = document.createElement("div");
   div.className = "msg " + role;
   if (role === "bot") {
     div.innerHTML = formatText(text);
-    if (sources && sources.length) {
-      div.appendChild(buildSources(sources));
+    if (kind === "cited" || kind === "notfound") {
+      div.appendChild(buildBadge(kind));
+      if (sources && sources.length) {
+        div.appendChild(buildSources(sources));
+      }
     }
   } else {
     div.textContent = text; // user and error text is never treated as HTML
@@ -513,6 +542,92 @@ function startNewChat() {
   inputEl.value = "";
   autoGrow();
   inputEl.focus();
+}
+
+// ============================================================
+//  CHECKLIST (the ✅ Checklist pop-up)
+// ============================================================
+const CHECK_KEY = "tripbot_checklist";
+
+function loadChecked() {
+  try {
+    return JSON.parse(localStorage.getItem(CHECK_KEY)) || {};
+  } catch (e) {
+    return {};
+  }
+}
+
+function saveChecked(obj) {
+  try {
+    localStorage.setItem(CHECK_KEY, JSON.stringify(obj));
+  } catch (e) {
+    // Storage blocked: the checks just won't be remembered.
+  }
+}
+
+let checked = loadChecked();
+
+function updateProgress() {
+  const boxes = $("checkList").querySelectorAll("input[type=checkbox]");
+  let done = 0;
+  boxes.forEach((b) => { if (b.checked) done++; });
+  $("checkProgress").textContent = done + " of " + boxes.length + " steps done";
+}
+
+function renderChecklist() {
+  const list = $("checkList");
+  list.innerHTML = "";
+
+  BOT_CONFIG.checklist.forEach((group, gi) => {
+    const heading = document.createElement("h3");
+    heading.textContent = group.group;
+    list.appendChild(heading);
+
+    group.items.forEach((item, ii) => {
+      const id = gi + "-" + ii;
+
+      const row = document.createElement("div");
+      row.className = "check-row";
+
+      const label = document.createElement("label");
+      const box = document.createElement("input");
+      box.type = "checkbox";
+      box.checked = !!checked[id];
+      box.addEventListener("change", () => {
+        if (box.checked) { checked[id] = true; } else { delete checked[id]; }
+        saveChecked(checked);
+        updateProgress();
+      });
+      const span = document.createElement("span");
+      span.textContent = item.text;
+      label.appendChild(box);
+      label.appendChild(span);
+
+      const ask = document.createElement("button");
+      ask.type = "button";
+      ask.className = "ask-btn";
+      ask.textContent = "Ask TripBot";
+      ask.addEventListener("click", () => {
+        closeCheck();
+        sendMessage(item.ask);
+      });
+
+      row.appendChild(label);
+      row.appendChild(ask);
+      list.appendChild(row);
+    });
+  });
+
+  updateProgress();
+}
+
+function openCheck() {
+  renderChecklist();
+  checkModal.hidden = false;
+}
+
+function closeCheck() {
+  checkModal.hidden = true;
 }
 
 // ---------- Talking to Gemini ----------
@@ -609,7 +724,8 @@ async function sendMessage(text) {
     }
 
     history.push({ role: "model", parts: [{ text: reply }] });
-    addMessage("bot", reply, useNotes ? found : null);
+    const kind = useNotes ? replyKind(reply) : "none";
+    addMessage("bot", reply, found, kind);
   } catch (err) {
     thinking.remove();
     history.pop();
@@ -646,6 +762,14 @@ chatForm.addEventListener("submit", (e) => {
 $("newChatBtn").addEventListener("click", startNewChat);
 $("keyBtn").addEventListener("click", openKeyModal);
 $("keyCancel").addEventListener("click", closeKeyModal);
+$("checkBtn").addEventListener("click", openCheck);
+$("checkClose").addEventListener("click", closeCheck);
+
+$("checkReset").addEventListener("click", () => {
+  checked = {};
+  saveChecked(checked);
+  renderChecklist();
+});
 
 $("keySave").addEventListener("click", () => {
   const key = keyInput.value.trim();
@@ -661,6 +785,10 @@ $("keySave").addEventListener("click", () => {
 
 keyModal.addEventListener("click", (e) => {
   if (e.target === keyModal) closeKeyModal();
+});
+
+checkModal.addEventListener("click", (e) => {
+  if (e.target === checkModal) closeCheck();
 });
 
 // ---------- Go! ----------
