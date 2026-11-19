@@ -1,4 +1,3 @@
-Japan notes (Girl Eat World, 13)
 Do I need a visa to enter Japan, and what is Visit Japan Web?
 How many days should I spend in Japan?
 What is the 10-day Golden Route for Japan?
@@ -12,7 +11,6 @@ When is the best time to visit Japan?
 How much does a trip to Japan cost?
 How do I get from the airport into Tokyo?
 What are the best tips for first-time visitors to Japan?
-General travel notes (SmarterTravel, 12)
 How far in advance should I book a flight?
 How can I find the best travel deal or cheapest flights and hotels?
 How can I avoid baggage fees, hotel fees, and rental car fees?
