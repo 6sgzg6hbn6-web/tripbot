@@ -1,38 +1,27 @@
-# My bot's knowledge file
-Notes to myself: all notes come from SmarterTravel's "Your 11 Most Frequently Asked Travel Questions—Answered" (originally published 2012, last updated March 2025). Airline and hotel policies change often, so details like fees and bag rules may be out of date.
-
-## How far in advance should I book a flight?
-Airfare changes constantly and can't be predicted exactly, but the source offers guidelines. For domestic trips, the best fares usually show up one to two months before departure. For international trips, start searching earlier, especially if your dates are fixed or you're traveling in a busy season. Add another month or two for peak times like holidays and major events. Some trips, such as Disney World during spring break or popular beach destinations in August, need even more lead time. To catch a price drop, set up fare alerts through Airfarewatchdog or the Hopper app, enter your dates and route, and get notified when the fare falls.
-
-## How can I find the best travel deal or cheapest flights and hotels?
-No single booking site always has the lowest price, so the source says shopping around is required. Compare three kinds of sites: the airline or hotel's own website, online travel agencies like Expedia and Orbitz, and metasearch sites like Kayak and TripAdvisor. Flexibility is the biggest money saver. Moving a trip from a destination's peak season to its shoulder season often means lower prices and smaller crowds. Flying out on a Tuesday or Wednesday instead of a Friday or Sunday can also cut costs. The source also has separate lists of the best sites for flights, hotels, car rentals, cruises, packages, and vacation rentals.
-
-## How can I avoid baggage fees, hotel fees, and rental car fees?
-Fees show up on flights, hotels, and rental cars, but many can be avoided. For flights, choose airlines that don't charge for common services like checked bags. The source gave Southwest's two free checked bags as an example, but that policy may have changed, so check before you fly. Some airlines waive bag fees for frequent flyers or holders of their credit cards. For hotels, skip the minibar and in-room phone calls, and find out about resort fees before booking, since you can book elsewhere or ask the manager to remove them. For rental cars, read the fine print for early-return and fuel charges, and check whether your credit card or auto insurance already covers collision damage before buying the rental company's waiver.
-
-## What are my rights if my flight is delayed or canceled?
-Your rights depend on whose fault the problem is. If the airline caused it, such as a mechanical issue, most airlines say you're entitled to be rebooked on the next available flight, possibly moved to another carrier, or refunded for the unused part of your trip. Some also give meal vouchers, hotel stays, and ground transportation, but that is up to the airline. If the cause is outside the airline's control, like a hurricane or winter storm, a refund is usually all you can expect. For major storms, airlines often cancel flights ahead of time and let you rebook within a set window without a penalty. Every airline's policy is different, so check yours.
-
-## Do I need travel insurance?
-It depends on how much risk you're willing to take. The source says that for a short, inexpensive trip you probably don't need it, since airlines and hotels often refund or rebook when a widespread storm hits. Insurance is worth considering if you've paid large nonrefundable deposits, you're traveling in a risky season like hurricane season, you have a possible medical condition, or you're going somewhere remote with few hospitals. Read the policy carefully. Many won't cover a storm once it's been predicted, and many exclude preexisting medical conditions. A "cancel for any reason" policy exists, but it usually costs more.
-
-## How do I know if a travel deal is really a good deal?
-Some deals are real and some are gimmicks or scams, so research before paying. First, confirm the company is reputable. For an unfamiliar tour operator, check the Better Business Bureau or the United States Tour Operators Association, and read reviews on TripAdvisor or Trustpilot. Always compare prices across several suppliers. With hotel packages, price the extras separately, such as spa services or gift baskets, because the room alone is often much cheaper than the package. Finally, read the fine print, especially blackout dates and restrictions, so you don't buy a deal you can't use.
-
-## How do I get an upgrade on a flight, hotel, or rental car?
-The best route to an upgrade is joining a loyalty program. Free first-class tickets are hard for casual travelers to earn, but basic upgrades usually cost fewer miles, and hotel and car points build up faster and come with perks. Airlines also run short sales on premium seats. At hotels, arriving late in the day can help, since empty rooms may be available, and mentioning a special occasion like a honeymoon or anniversary at check-in can too. At the rental car counter, you can ask for an upgrade, but a bigger car may cost more in gas. In every case, dress nicely, be specific, and be polite.
-
-## What can I bring on the plane? What are the liquid rules?
-In your carry-on, liquids and gels such as shampoo, insect repellent, and sunscreen must fit in a single clear quart-size plastic bag, and each bottle must be 3.4 ounces or less. Larger amounts can go in your checked bag if they're sealed well to prevent spills. Prescription medications, breast milk, and baby formula are exceptions and can be carried on in larger amounts. The TSA also has strict rules for items like scissors, razors, sharp objects, and even wrapped gifts. For specifics, check the TSA website's "What Can I Bring?" page.
-
-## What should I pack for my trip?
-What to pack depends on where you're going and for how long. The source suggests starting with a general packing list that covers the basics for almost any trip, then adding a specific list for your trip type. It mentions lists for the beach, carry-on only trips, the holidays, cruises, international travel, African safaris, and ski trips. It also points to packing tips about packing to meet TSA rules, saving space, and whether to roll or fold clothes. If you tend to overpack, it recommends a minimalist packing approach. Tell TripBot your destination and trip length to get a tailored packing list.
-
-## What can I do if I'm unhappy with my seatmate on a plane?
-The source's main advice is to quietly ask a flight attendant if there are open seats you can move to. This applies to problems like a seatmate with an animal when you have allergies, or a seatmate whose body overlaps into your space. If no seats are free and the issue is animal allergies, the crew may be able to find a passenger without allergies who is willing to swap. Raise the concern early, preferably before takeoff, because flight attendants have far less flexibility once the plane is in the air.
-
-## How do I pick the best travel destination?
-There's no single best destination, since it depends on your travel style and the time of year. The source gives a few tricks. For affordability, look at places with new airline routes or newly opened hotels, because introductory rates are often discounted. Also look at destinations bouncing back from natural disasters or political unrest, where low tourist demand can mean good deals once the place is safe and open. If you want excitement, look for places hosting big events like sporting competitions, festivals, or museum openings, and check the local tourism bureau for related deals.
-
-## How do I know if a travel destination is safe?
-The source's first step is to check the U.S. State Department's travel advisories for your destination country, which cover crime, health concerns, and other safety issues. Read the details before ruling out an entire country, since it may be safe as long as you avoid certain areas. In the weeks before your trip, keep an eye on the news for last-minute problems. If you have specific worries, you can ask questions on travel forums like TripAdvisor and Lonely Planet, where locals and destination experts often share current updates from the ground.
+Japan notes (Girl Eat World, 13)
+Do I need a visa to enter Japan, and what is Visit Japan Web?
+How many days should I spend in Japan?
+What is the 10-day Golden Route for Japan?
+How much cash should I bring to Japan, and where can I get yen?
+Do you tip in Japan?
+What are the main etiquette rules in Japan?
+How do I handle my luggage when moving between cities in Japan?
+How do I get around Japan?
+How does tax-free shopping work in Japan?
+When is the best time to visit Japan?
+How much does a trip to Japan cost?
+How do I get from the airport into Tokyo?
+What are the best tips for first-time visitors to Japan?
+General travel notes (SmarterTravel, 12)
+How far in advance should I book a flight?
+How can I find the best travel deal or cheapest flights and hotels?
+How can I avoid baggage fees, hotel fees, and rental car fees?
+What are my rights if my flight is delayed or canceled?
+Do I need travel insurance?
+How do I know if a travel deal is really a good deal?
+How do I get an upgrade on a flight, hotel, or rental car?
+What can I bring on the plane? What are the liquid rules?
+What should I pack for my trip?
+What can I do if I’m unhappy with my seatmate on a plane?
+How do I pick the best travel destination?
+How do I know if a travel destination is safe?
