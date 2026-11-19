@@ -60,7 +60,7 @@ body {
 .brand h1 { margin: 0; font-size: 20px; }
 .brand p { margin: 0; font-size: 13px; opacity: 0.9; }
 
-.actions { display: flex; gap: 8px; }
+.actions { display: flex; gap: 8px; flex-wrap: wrap; }
 
 .btn {
   background: rgba(255, 255, 255, 0.18);
@@ -136,9 +136,21 @@ body {
   }
 }
 
+/* Answer badge */
+.badge {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--text);
+}
+.badge-ok { background: rgba(46, 160, 67, 0.18); border: 1px solid rgba(46, 160, 67, 0.5); }
+.badge-warn { background: rgba(230, 160, 0, 0.18); border: 1px solid rgba(230, 160, 0, 0.55); }
+
 /* Sources section under bot replies */
 .sources {
-  margin-top: 10px;
+  margin-top: 8px;
   padding-top: 8px;
   border-top: 1px solid var(--border);
   font-size: 13px;
@@ -223,7 +235,18 @@ body {
 }
 .composer button:disabled { opacity: 0.5; cursor: not-allowed; }
 
-/* API key pop-up */
+/* Limitations note under the chat box */
+.footer-note {
+  margin: 0;
+  padding: 0 16px 10px;
+  font-size: 12px;
+  color: var(--muted);
+  background: var(--card);
+  text-align: center;
+}
+.footer-note:empty { display: none; }
+
+/* Pop-ups (API key and checklist) */
 .modal {
   position: fixed;
   inset: 0;
@@ -244,6 +267,11 @@ body {
   width: 100%;
   max-width: 420px;
 }
+.modal-card.wide {
+  max-width: 560px;
+  max-height: 85vh;
+  overflow-y: auto;
+}
 .modal-card h2 { margin: 0 0 6px; font-size: 18px; }
 .modal-card p { margin: 0 0 12px; color: var(--muted); font-size: 14px; }
 
@@ -259,7 +287,7 @@ body {
 
 .remember { display: flex; align-items: center; gap: 8px; margin: 12px 0; font-size: 14px; }
 
-.modal-actions { display: flex; justify-content: flex-end; gap: 8px; }
+.modal-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 14px; }
 .btn-plain, .btn-main {
   border-radius: 10px;
   padding: 9px 16px;
@@ -268,3 +296,39 @@ body {
 }
 .btn-plain { background: transparent; color: var(--text); border: 1px solid var(--border); }
 .btn-main { background: var(--theme); color: #fff; border: none; }
+
+/* Checklist */
+.check-list h3 {
+  margin: 14px 0 6px;
+  font-size: 13px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.check-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+}
+.check-row label {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.check-row input { margin-top: 3px; }
+.ask-btn {
+  flex-shrink: 0;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.ask-btn:hover { border-color: var(--theme); }
